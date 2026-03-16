@@ -56,7 +56,7 @@ function HeroSection({
       <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_top,rgba(166,134,78,0.16),transparent_38%),radial-gradient(circle_at_80%_18%,rgba(90,118,156,0.18),transparent_32%)]" />
       <div className="mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(25rem,0.95fr)]">
         <Reveal className="relative z-10">
-          <p className="text-[0.72rem] uppercase tracking-[0.38em] text-gold/80">
+          <p className="eyebrow eyebrow-gold">
             Literary Fiction
           </p>
           <h1 className="mt-6 max-w-3xl font-serif text-6xl leading-[0.92] text-balance text-ivory sm:text-7xl lg:text-[6.2rem]">
@@ -95,7 +95,7 @@ function HeroSection({
 
             <div className="relative grid gap-8 sm:grid-cols-[1fr_auto] sm:items-center">
               <div className="max-w-sm">
-                <p className="text-[0.7rem] uppercase tracking-[0.36em] text-gold/72">
+                <p className="eyebrow eyebrow-gold">
                   {siteData.hero.featuredLabel}
                 </p>
                 <h2 className="mt-4 max-w-xs font-serif text-4xl leading-none text-ivory sm:text-[3.25rem]">
@@ -157,55 +157,124 @@ function AboutSection() {
       id="about"
       className="scroll-mt-28 px-6 py-18 sm:py-24 lg:px-10 lg:py-28"
     >
-      <div className="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.05fr)_24rem] lg:gap-16">
+      <div className="mx-auto w-full max-w-7xl">
         <Reveal>
-          <p className="text-[0.72rem] uppercase tracking-[0.36em] text-gold/76">
-            About
-          </p>
-          <p className="mt-6 max-w-4xl font-serif text-3xl leading-[1.15] text-ivory sm:text-4xl lg:text-[3.15rem]">
-            {siteData.about.lead}
-          </p>
-          <p className="mt-8 max-w-3xl text-lg leading-8 text-ivory/68">
-            {siteData.about.support}
-          </p>
+          <div className="relative overflow-hidden rounded-[2.4rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-6 py-8 shadow-[0_30px_100px_rgba(0,0,0,0.4)] backdrop-blur-2xl sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(166,134,78,0.16),transparent_26%),radial-gradient(circle_at_88%_12%,rgba(90,118,156,0.14),transparent_24%)]" />
+            <div className="absolute inset-x-8 top-8 h-px bg-[linear-gradient(90deg,transparent,rgba(179,149,92,0.68),transparent)]" />
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {siteData.about.stats.map((stat) => (
-              <div
-                key={`${stat.value}-${stat.label}`}
-                className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.2)]"
-              >
-                <p className="font-serif text-2xl leading-none text-ivory">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-[0.68rem] uppercase tracking-[0.28em] text-ivory/50">
-                  {stat.label}
-                </p>
+            <div className="relative">
+              <div className="flex flex-col gap-4 border-b border-white/10 pb-8 lg:flex-row lg:items-end lg:justify-between">
+                <div className="max-w-2xl">
+                  <p className="eyebrow eyebrow-gold">
+                    About
+                  </p>
+                  <h2 className="mt-5 font-serif text-4xl leading-[0.94] text-ivory sm:text-5xl lg:text-[4.35rem]">
+                    A long-form literary voice shaped over three decades.
+                  </h2>
+                </div>
+                <div className="max-w-md rounded-[1.4rem] border border-gold/15 bg-[linear-gradient(180deg,rgba(168,134,75,0.12),rgba(168,134,75,0.04))] px-5 py-4">
+                  <p className="eyebrow eyebrow-gold">
+                    Authorial Note
+                  </p>
+                  <blockquote className="mt-3 font-serif text-[1.8rem] leading-[1.02] text-ivory sm:text-[2.15rem]">
+                    {siteData.about.quote}
+                  </blockquote>
+                </div>
               </div>
-            ))}
-          </div>
-        </Reveal>
 
-        <Reveal delay={0.08}>
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(166,134,78,0.18),transparent_32%)]" />
-            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-midnight/70">
-              <Image
-                src={siteData.about.portrait}
-                alt={siteData.about.portraitAlt}
-                width={680}
-                height={760}
-                className="h-auto w-full object-cover grayscale contrast-125"
-              />
-            </div>
-            <div className="relative mt-5 border-t border-white/10 pt-5">
-              <p className="text-[0.68rem] uppercase tracking-[0.3em] text-gold/76">
-                Former Lecturer in English
-              </p>
-              <p className="mt-3 max-w-sm text-sm leading-7 text-ivory/62">
-                Bergen Community College, SUNY Albany, and the College of Saint
-                Rose.
-              </p>
+              <div className="mt-8 grid gap-8 xl:grid-cols-[minmax(0,1.15fr)_22rem] xl:items-start">
+                <div className="space-y-8">
+                  <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-midnight/45 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.24)] sm:p-8 lg:p-9">
+                    <div className="absolute inset-x-6 top-6 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.05),rgba(179,149,92,0.55),rgba(255,255,255,0.05))]" />
+                    <div className="relative flow-root pt-5">
+                      <p className="max-w-4xl font-serif text-[2rem] leading-[1.06] text-ivory sm:text-[2.65rem] lg:text-[3.2rem]">
+                        <span className="float-left mr-4 mt-1 font-serif text-[4.6rem] leading-[0.72] text-gold/88 sm:text-[5.4rem]">
+                          H
+                        </span>
+                        {siteData.about.lead.slice(1)}
+                      </p>
+                    </div>
+                    <p className="mt-8 max-w-3xl border-t border-white/10 pt-6 text-base leading-8 text-ivory/66 sm:text-[1.02rem]">
+                      {siteData.about.support}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {siteData.about.milestones.map((milestone) => (
+                      <div
+                        key={`${milestone.label}-${milestone.title}`}
+                        className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+                      >
+                        <p className="eyebrow eyebrow-gold">
+                          {milestone.label}
+                        </p>
+                        <p className="mt-4 font-serif text-[1.7rem] leading-[1.05] text-ivory">
+                          {milestone.title}
+                        </p>
+                        <p className="mt-4 text-sm leading-7 text-ivory/60">
+                          {milestone.body}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-1">
+                  <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(166,134,78,0.18),transparent_30%)]" />
+                    <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-midnight/75">
+                      <Image
+                        src={siteData.about.portrait}
+                        alt={siteData.about.portraitAlt}
+                        width={680}
+                        height={760}
+                        className="h-auto w-full object-cover grayscale contrast-125"
+                      />
+                    </div>
+                    <div className="relative mt-5 flex flex-col gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <p className="eyebrow eyebrow-gold max-w-[16rem]">
+                          Former Lecturer in English
+                        </p>
+                        <p className="mt-3 max-w-sm text-sm leading-7 text-ivory/62">
+                          Bergen Community College, SUNY Albany, and the College
+                          of Saint Rose.
+                        </p>
+                      </div>
+                      <div className="shrink-0 rounded-full border border-white/10 px-4 py-2 text-[0.72rem] uppercase tracking-[0.16em] text-ivory/54">
+                        Albany
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(14,20,31,0.92),rgba(9,12,18,0.82))] p-6 shadow-[0_20px_70px_rgba(0,0,0,0.25)]">
+                    <p className="eyebrow eyebrow-gold">
+                      Literary Position
+                    </p>
+                    <p className="mt-4 font-serif text-[2rem] leading-[1.04] text-ivory">
+                      A novelist and essayist attentive to power, culture, and
+                      the fault lines of American life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-px overflow-hidden rounded-[1.7rem] border border-white/10 bg-white/10 sm:grid-cols-2 xl:grid-cols-4">
+                {siteData.about.stats.map((stat) => (
+                  <div
+                    key={`${stat.value}-${stat.label}`}
+                    className="bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-5 py-6"
+                  >
+                    <p className="font-serif text-[1.85rem] leading-none text-ivory">
+                      {stat.value}
+                    </p>
+                    <p className="mt-3 text-[0.66rem] uppercase tracking-[0.28em] text-ivory/50">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Reveal>
@@ -227,7 +296,7 @@ function BooksSection({
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
           <Reveal>
-            <p className="text-[0.72rem] uppercase tracking-[0.36em] text-gold/76">
+            <p className="eyebrow eyebrow-gold">
               Books
             </p>
             <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-none text-ivory sm:text-5xl lg:text-[4.25rem]">
@@ -296,7 +365,7 @@ function BooksSection({
                   </div>
 
                   <div className="relative flex flex-1 flex-col">
-                    <p className="mt-6 text-[0.66rem] uppercase tracking-[0.3em] text-gold/72">
+                    <p className="eyebrow eyebrow-gold mt-6">
                       {book.category}
                     </p>
                     <h3 className="mt-3 font-serif text-3xl leading-tight text-ivory">
@@ -354,7 +423,7 @@ function FeaturedSection({
 
             <div className="relative grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
               <div className="lg:pr-10">
-                <p className="text-[0.72rem] uppercase tracking-[0.36em] text-gold/78">
+                <p className="eyebrow eyebrow-gold">
                   Featured Novel
                 </p>
                 <h2 className="mt-6 max-w-xl font-serif text-5xl leading-[0.92] text-ivory sm:text-6xl lg:text-[5.6rem]">
@@ -493,7 +562,7 @@ function ThemesSection({
             />
 
             <div className="relative">
-              <p className="text-[0.72rem] uppercase tracking-[0.36em] text-gold/76">
+              <p className="eyebrow eyebrow-gold">
                 Themes
               </p>
               <h2 className="mx-auto mt-6 max-w-5xl font-serif text-4xl leading-[1.02] text-balance text-ivory sm:text-5xl lg:text-[4.5rem]">
@@ -520,7 +589,7 @@ function PressSection() {
         <Reveal>
           <div className="grid gap-8 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-[0_28px_100px_rgba(0,0,0,0.38)] backdrop-blur-xl sm:p-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:p-10">
             <div>
-              <p className="text-[0.72rem] uppercase tracking-[0.36em] text-gold/76">
+              <p className="eyebrow eyebrow-gold">
                 Press
               </p>
               <h2 className="mt-6 font-serif text-4xl leading-none text-ivory sm:text-5xl">
@@ -567,7 +636,7 @@ function RetailSection() {
         <Reveal>
           <div className="flex flex-col gap-8 rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:px-8 sm:py-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-[0.72rem] uppercase tracking-[0.36em] text-gold/76">
+              <p className="eyebrow eyebrow-gold">
                 Buy
               </p>
               <h2 className="mt-5 font-serif text-4xl leading-none text-ivory sm:text-5xl">

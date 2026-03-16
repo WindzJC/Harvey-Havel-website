@@ -84,6 +84,23 @@ img {
   color: var(--ivory);
 }
 
+.eyebrow {
+  font-size: clamp(0.74rem, 0.72rem + 0.12vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.eyebrow-gold {
+  color: rgba(215, 193, 145, 0.92);
+  text-shadow: 0 0 18px rgba(168, 134, 75, 0.12);
+}
+
+.eyebrow-muted {
+  color: rgba(244, 238, 225, 0.56);
+}
+
 .skip-link {
   position: fixed;
   left: 1rem;

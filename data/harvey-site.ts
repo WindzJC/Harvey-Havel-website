@@ -13,6 +13,12 @@ export type Stat = {
   label: string;
 };
 
+export type AboutMilestone = {
+  label: string;
+  title: string;
+  body: string;
+};
+
 export type Book = {
   title: string;
   category: string;
@@ -41,6 +47,24 @@ const aboutStats: Stat[] = [
   { value: "19", label: "Books" },
   { value: "Novels, Short Stories, Essays", label: "Catalogue" },
   { value: "Albany, New York", label: "Based In" },
+];
+
+const aboutMilestones: AboutMilestone[] = [
+  {
+    label: "1999",
+    title: "Noble McCloud, A Novel",
+    body: "His first novel, about a young struggling musician, was published in 1999.",
+  },
+  {
+    label: "Academic Life",
+    title: "Lecturer and teacher",
+    body: "He taught English, writing, and literature at Bergen Community College, SUNY Albany, and the College of Saint Rose.",
+  },
+  {
+    label: "Now",
+    title: "Albany, New York",
+    body: "He continues to write for readers drawn to daring, searching, and uncompromising fiction.",
+  },
 ];
 
 const featuredActions: ActionLink[] = [
@@ -157,9 +181,11 @@ export const siteData = {
       "Harvey Havel has been a short-story writer and novelist for over thirty years. His first novel, Noble McCloud, A Novel, about a young struggling musician, was published in 1999. His body of work now spans novels, short stories, and essay collections on current affairs and political life.",
     support:
       "He is a former Lecturer in English at Bergen Community College in Paramus, New Jersey, and also taught writing and literature at SUNY Albany and the College of Saint Rose in Albany, New York. He lives in Albany and continues to write for readers drawn to daring, searching, and uncompromising fiction.",
-    portrait: "/assets/harvey/author-headshot-amazon.jpg",
-    portraitAlt: "Black and white author portrait of Harvey Havel.",
+    quote: "Daring, searching, and uncompromising fiction.",
+    portrait: "/assets/harvey/author-photo-from-manuscript.png",
+    portraitAlt: "Author photo of Harvey Havel.",
     stats: aboutStats,
+    milestones: aboutMilestones,
   },
   featured: {
     title: "The Queen of Intelligence",

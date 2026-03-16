@@ -32,7 +32,7 @@ export function LinkButton({
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
       className={cn(
-        "inline-flex items-center justify-center rounded-full border px-5 py-3 text-[0.72rem] font-medium uppercase tracking-[0.24em] transition duration-300 ease-out",
+        "inline-flex items-center justify-center rounded-full border px-5 py-3 text-[0.76rem] font-semibold uppercase tracking-[0.18em] transition duration-300 ease-out",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian",
         variantClasses[variant],
         className,

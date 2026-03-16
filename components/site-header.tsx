@@ -57,7 +57,7 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
           <span className="block font-serif text-xl tracking-[0.08em] text-ivory transition duration-300 group-hover:text-gold">
             Harvey Havel
           </span>
-          <span className="block text-[0.62rem] uppercase tracking-[0.34em] text-ivory/45">
+          <span className="block text-[0.7rem] uppercase tracking-[0.22em] text-ivory/52">
             Author
           </span>
         </a>
@@ -67,7 +67,7 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
             <a
               key={item.label}
               href={item.href}
-              className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory/70 transition duration-300 hover:text-gold focus-visible:outline-none focus-visible:text-gold"
+              className="text-[0.74rem] uppercase tracking-[0.18em] text-ivory/74 transition duration-300 hover:text-gold focus-visible:outline-none focus-visible:text-gold"
             >
               {item.label}
             </a>
@@ -80,7 +80,7 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
           aria-controls="mobile-nav"
           aria-label="Toggle navigation menu"
           onClick={() => setMenuOpen((current) => !current)}
-          className="inline-flex items-center justify-center rounded-full border border-white/10 px-4 py-2 text-[0.68rem] uppercase tracking-[0.28em] text-ivory/75 transition duration-300 hover:border-white/20 hover:text-gold md:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-white/10 px-4 py-2 text-[0.74rem] uppercase tracking-[0.18em] text-ivory/78 transition duration-300 hover:border-white/20 hover:text-gold md:hidden"
         >
           Menu
         </button>
