@@ -1,0 +1,37 @@
+{
+  "author": {
+    "primaryPortrait": "/assets/harvey/author-headshot-amazon.jpg",
+    "secondaryPortrait": "/assets/harvey/author-photo-from-manuscript.png"
+  },
+  "featuredBook": {
+    "title": "The Queen of Intelligence",
+    "subtitle": "A 9/11 Conspiracy Novel",
+    "cover": "/assets/harvey/the-queen-of-intelligence-cover.jpg"
+  },
+  "books": [
+    {
+      "title": "Noble McCloud",
+      "subtitle": "A Novel",
+      "cover": "/assets/harvey/noble-mccloud-cover.jpg"
+    },
+    {
+      "title": "The Wild Gypsy of Arbor Hill",
+      "subtitle": "A Novella",
+      "cover": "/assets/harvey/the-wild-gypsy-of-arbor-hill-cover.jpg"
+    },
+    {
+      "title": "Stories from the Fall of the Empire",
+      "cover": "/assets/harvey/stories-from-the-fall-of-the-empire-cover.jpg"
+    },
+    {
+      "title": "The Odd and The Strange",
+      "subtitle": "A Collection of Very Short Fiction",
+      "cover": "/assets/harvey/the-odd-and-the-strange-cover.jpg"
+    },
+    {
+      "title": "Mother",
+      "subtitle": "A Memoir",
+      "cover": "/assets/harvey/mother-a-memoir-cover.jpg"
+    }
+  ]
+}
