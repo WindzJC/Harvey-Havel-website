@@ -413,26 +413,27 @@ function FeaturedSection({
   return (
     <section
       id="featured"
-      className="scroll-mt-28 px-6 py-18 sm:py-24 lg:px-10 lg:py-30"
+      className="scroll-mt-28 px-6 py-18 sm:py-24 lg:px-10 lg:py-28"
     >
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-8 shadow-[0_28px_110px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(166,134,78,0.18),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(90,118,156,0.16),transparent_26%)]" />
-            <div className="absolute left-10 right-10 top-10 h-px bg-[linear-gradient(90deg,transparent,rgba(179,149,92,0.7),transparent)]" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.025))] px-6 py-8 shadow-[0_28px_110px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(166,134,78,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(90,118,156,0.12),transparent_26%)]" />
+            <div className="absolute inset-x-10 top-10 h-px bg-[linear-gradient(90deg,transparent,rgba(179,149,92,0.62),transparent)]" />
 
-            <div className="relative grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
-              <div className="lg:pr-10">
-                <p className="eyebrow eyebrow-gold">
-                  Featured Novel
-                </p>
-                <h2 className="mt-6 max-w-xl font-serif text-5xl leading-[0.92] text-ivory sm:text-6xl lg:text-[5.6rem]">
+            <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.82fr)] lg:items-center">
+              <div className="max-w-2xl">
+                <p className="eyebrow eyebrow-gold">Featured Novel</p>
+
+                <h2 className="mt-6 max-w-[34rem] font-serif text-5xl leading-[0.9] text-ivory sm:text-6xl lg:text-[5rem]">
                   {siteData.featured.title}
                 </h2>
-                <p className="mt-5 text-sm uppercase tracking-[0.3em] text-ivory/52">
+
+                <p className="mt-5 text-sm uppercase tracking-[0.3em] text-ivory/50">
                   {siteData.featured.subtitle}
                 </p>
-                <p className="mt-8 max-w-xl text-lg leading-8 text-ivory/68">
+
+                <p className="mt-8 max-w-[38rem] text-lg leading-8 text-ivory/66">
                   {siteData.featured.description}
                 </p>
 
@@ -440,7 +441,7 @@ function FeaturedSection({
                   {siteData.featured.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-gold/25 bg-gold/10 px-4 py-2 text-[0.66rem] uppercase tracking-[0.24em] text-gold-light"
+                      className="rounded-full border border-gold/20 bg-gold/8 px-4 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-gold-light"
                     >
                       {tag}
                     </span>
@@ -461,58 +462,28 @@ function FeaturedSection({
                 </div>
               </div>
 
-              <div className="relative lg:border-l lg:border-white/10 lg:pl-10">
-                <div className="absolute left-0 top-0 hidden h-full w-px bg-[linear-gradient(180deg,transparent,rgba(179,149,92,0.52),transparent)] lg:block" />
-                <div className="grid gap-6 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-start">
-                  <motion.div
-                    whileHover={shouldReduceMotion ? undefined : { y: -6 }}
-                    transition={{ duration: 0.24, ease: "easeOut" }}
-                    className="mx-auto w-[14rem]"
-                  >
-                    <div className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-midnight/80 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.55)]">
-                      <Image
-                        src={siteData.featured.cover}
-                        alt="Book cover for The Queen of Intelligence by Harvey Havel."
-                        width={620}
-                        height={920}
-                        className="h-auto w-full rounded-[1.1rem] object-cover"
-                      />
-                    </div>
-                  </motion.div>
+              <div className="relative flex justify-center lg:justify-center lg:pl-4">
+                <div
+                  aria-hidden="true"
+                  className="absolute h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(166,134,78,0.18),transparent_62%)] blur-3xl"
+                />
 
-                  <div className="space-y-6">
-                    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                      <p className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory/46">
-                        Editorial Frame
-                      </p>
-                      <p className="mt-4 font-serif text-3xl leading-tight text-ivory">
-                        Sweeping, provocative, and resolutely fictional.
-                      </p>
-                      <p className="mt-4 text-base leading-7 text-ivory/62">
-                        Presented as a literary-political thriller, the novel
-                        moves through espionage, power, and unease without
-                        collapsing into reportage or sensationalism.
-                      </p>
-                    </div>
-
-                    <div className="grid gap-4 sm:grid-cols-3">
-                      {[
-                        "Espionage",
-                        "Psychological Tension",
-                        "Political Unease",
-                      ].map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] px-4 py-5 text-center"
-                        >
-                          <p className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory/58">
-                            {item}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+                <motion.div
+                  whileHover={shouldReduceMotion ? undefined : { y: -6 }}
+                  transition={{ duration: 0.24, ease: "easeOut" }}
+                  className="relative w-[19rem] sm:w-[21rem] lg:w-[24rem]"
+                >
+                  <div className="absolute inset-0 translate-x-5 translate-y-5 rounded-[1.8rem] border border-gold/15 bg-gold/8 blur-[2px]" />
+                  <div className="relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-midnight/82 p-3 shadow-[0_34px_100px_rgba(0,0,0,0.55)]">
+                    <Image
+                      src={siteData.featured.cover}
+                      alt={`Book cover for ${siteData.featured.title} by Harvey Havel.`}
+                      width={720}
+                      height={1080}
+                      className="h-auto w-full rounded-[1.35rem] object-cover"
+                    />
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
