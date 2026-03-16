@@ -159,121 +159,95 @@ function AboutSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2.4rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-6 py-8 shadow-[0_30px_100px_rgba(0,0,0,0.4)] backdrop-blur-2xl sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+          <div className="relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-6 py-8 shadow-[0_30px_100px_rgba(0,0,0,0.4)] backdrop-blur-2xl sm:px-8 sm:py-10 lg:px-10 lg:py-12">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(166,134,78,0.16),transparent_26%),radial-gradient(circle_at_88%_12%,rgba(90,118,156,0.14),transparent_24%)]" />
             <div className="absolute inset-x-8 top-8 h-px bg-[linear-gradient(90deg,transparent,rgba(179,149,92,0.68),transparent)]" />
 
-            <div className="relative">
-              <div className="flex flex-col gap-4 border-b border-white/10 pb-8 lg:flex-row lg:items-end lg:justify-between">
-                <div className="max-w-2xl">
-                  <p className="eyebrow eyebrow-gold">
-                    About
-                  </p>
-                  <h2 className="mt-5 font-serif text-4xl leading-[0.94] text-ivory sm:text-5xl lg:text-[4.35rem]">
-                    A long-form literary voice shaped over three decades.
-                  </h2>
-                </div>
-                <div className="max-w-md rounded-[1.4rem] border border-gold/15 bg-[linear-gradient(180deg,rgba(168,134,75,0.12),rgba(168,134,75,0.04))] px-5 py-4">
-                  <p className="eyebrow eyebrow-gold">
-                    Authorial Note
-                  </p>
-                  <blockquote className="mt-3 font-serif text-[1.8rem] leading-[1.02] text-ivory sm:text-[2.15rem]">
-                    {siteData.about.quote}
-                  </blockquote>
-                </div>
-              </div>
+            <div className="relative grid gap-10 xl:grid-cols-[minmax(0,1.05fr)_24rem] xl:items-start">
+              <div className="min-w-0">
+                <p className="eyebrow eyebrow-gold">About</p>
 
-              <div className="mt-8 grid gap-8 xl:grid-cols-[minmax(0,1.15fr)_22rem] xl:items-start">
-                <div className="space-y-8">
-                  <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-midnight/45 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.24)] sm:p-8 lg:p-9">
-                    <div className="absolute inset-x-6 top-6 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.05),rgba(179,149,92,0.55),rgba(255,255,255,0.05))]" />
-                    <div className="relative flow-root pt-5">
-                      <p className="max-w-4xl font-serif text-[2rem] leading-[1.06] text-ivory sm:text-[2.65rem] lg:text-[3.2rem]">
-                        <span className="float-left mr-4 mt-1 font-serif text-[4.6rem] leading-[0.72] text-gold/88 sm:text-[5.4rem]">
-                          H
-                        </span>
-                        {siteData.about.lead.slice(1)}
-                      </p>
-                    </div>
-                    <p className="mt-8 max-w-3xl border-t border-white/10 pt-6 text-base leading-8 text-ivory/66 sm:text-[1.02rem]">
-                      {siteData.about.support}
+                <h2 className="mt-5 max-w-4xl font-serif text-4xl leading-[0.94] text-ivory sm:text-5xl lg:text-[4.2rem]">
+                  Three decades of fiction, essays, and literary inquiry.
+                </h2>
+
+                <div className="mt-8 max-w-4xl rounded-[1.8rem] border border-white/10 bg-midnight/45 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.24)] sm:p-8 lg:p-9">
+                  <div className="flow-root">
+                    <p className="font-serif text-[1.95rem] leading-[1.06] text-ivory sm:text-[2.45rem] lg:text-[2.9rem]">
+                      <span className="float-left mr-4 mt-1 font-serif text-[4.5rem] leading-[0.72] text-gold/88 sm:text-[5.2rem]">
+                        H
+                      </span>
+                      {siteData.about.lead.slice(1)}
                     </p>
                   </div>
 
-                  <div className="grid gap-4 md:grid-cols-3">
-                    {siteData.about.milestones.map((milestone) => (
+                  <p className="mt-8 border-t border-white/10 pt-6 text-base leading-8 text-ivory/66 sm:text-[1.02rem]">
+                    {siteData.about.support}
+                  </p>
+                </div>
+
+                <div className="mt-8 rounded-[1.7rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+                  <p className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory/46">
+                    Career Notes
+                  </p>
+
+                  <div className="mt-5 space-y-5">
+                    {siteData.about.milestones.map((milestone, index) => (
                       <div
                         key={`${milestone.label}-${milestone.title}`}
-                        className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+                        className={index !== 0 ? "border-t border-white/10 pt-5" : ""}
                       >
-                        <p className="eyebrow eyebrow-gold">
+                        <p className="text-[0.66rem] uppercase tracking-[0.24em] text-gold-light">
                           {milestone.label}
                         </p>
-                        <p className="mt-4 font-serif text-[1.7rem] leading-[1.05] text-ivory">
+                        <p className="mt-2 font-serif text-[1.55rem] leading-[1.05] text-ivory">
                           {milestone.title}
                         </p>
-                        <p className="mt-4 text-sm leading-7 text-ivory/60">
+                        <p className="mt-3 max-w-2xl text-sm leading-7 text-ivory/60">
                           {milestone.body}
                         </p>
                       </div>
                     ))}
                   </div>
                 </div>
-
-                <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-1">
-                  <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(166,134,78,0.18),transparent_30%)]" />
-                    <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-midnight/75">
-                      <Image
-                        src={siteData.about.portrait}
-                        alt={siteData.about.portraitAlt}
-                        width={680}
-                        height={760}
-                        className="h-auto w-full object-cover grayscale contrast-125"
-                      />
-                    </div>
-                    <div className="relative mt-5 flex flex-col gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <p className="eyebrow eyebrow-gold max-w-[16rem]">
-                          Former Lecturer in English
-                        </p>
-                        <p className="mt-3 max-w-sm text-sm leading-7 text-ivory/62">
-                          Bergen Community College, SUNY Albany, and the College
-                          of Saint Rose.
-                        </p>
-                      </div>
-                      <div className="shrink-0 rounded-full border border-white/10 px-4 py-2 text-[0.72rem] uppercase tracking-[0.16em] text-ivory/54">
-                        Albany
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(14,20,31,0.92),rgba(9,12,18,0.82))] p-6 shadow-[0_20px_70px_rgba(0,0,0,0.25)]">
-                    <p className="eyebrow eyebrow-gold">
-                      Literary Position
-                    </p>
-                    <p className="mt-4 font-serif text-[2rem] leading-[1.04] text-ivory">
-                      A novelist and essayist attentive to power, culture, and
-                      the fault lines of American life.
-                    </p>
-                  </div>
-                </div>
               </div>
 
-              <div className="mt-8 grid gap-px overflow-hidden rounded-[1.7rem] border border-white/10 bg-white/10 sm:grid-cols-2 xl:grid-cols-4">
-                {siteData.about.stats.map((stat) => (
-                  <div
-                    key={`${stat.value}-${stat.label}`}
-                    className="bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-5 py-6"
-                  >
-                    <p className="font-serif text-[1.85rem] leading-none text-ivory">
-                      {stat.value}
-                    </p>
-                    <p className="mt-3 text-[0.66rem] uppercase tracking-[0.28em] text-ivory/50">
-                      {stat.label}
-                    </p>
+              <div className="space-y-5">
+                <div className="relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-white/[0.05] p-4 shadow-[0_28px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(166,134,78,0.16),transparent_30%)]" />
+                  <div className="relative overflow-hidden rounded-[1.45rem] border border-white/10 bg-midnight/75">
+                    <Image
+                      src={siteData.about.portrait}
+                      alt={siteData.about.portraitAlt}
+                      width={680}
+                      height={820}
+                      className="h-auto w-full object-cover grayscale contrast-125"
+                    />
                   </div>
-                ))}
+                </div>
+
+                <div className="rounded-[1.7rem] border border-gold/15 bg-[linear-gradient(180deg,rgba(168,134,75,0.12),rgba(168,134,75,0.04))] p-6">
+                  <p className="eyebrow eyebrow-gold">Authorial Note</p>
+                  <blockquote className="mt-4 font-serif text-[2rem] leading-[1.04] text-ivory sm:text-[2.25rem]">
+                    {siteData.about.quote}
+                  </blockquote>
+                </div>
+
+                <div className="grid gap-px overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/10 sm:grid-cols-2">
+                  {siteData.about.stats.map((stat) => (
+                    <div
+                      key={`${stat.value}-${stat.label}`}
+                      className="bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-5 py-6"
+                    >
+                      <p className="font-serif text-[1.8rem] leading-none text-ivory">
+                        {stat.value}
+                      </p>
+                      <p className="mt-3 text-[0.66rem] uppercase tracking-[0.24em] text-ivory/50">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -288,117 +262,154 @@ function BooksSection({
 }: {
   shouldReduceMotion: boolean | null;
 }) {
+  const featuredTitle = siteData.featured.title;
+
+  const libraryBooks = [
+    ...siteData.books
+      .filter((book) => book.image && book.title !== featuredTitle)
+      .map((book) => ({
+        title: book.title,
+        category: book.category,
+        shortLine: book.shortLine,
+        image: book.image!,
+        alt: book.alt ?? `Book cover for ${book.title}.`,
+        retailers: book.retailers,
+      })),
+    ...siteData.backlistPreview
+      .filter((book) => book.title !== featuredTitle)
+      .filter(
+        (book) =>
+          !siteData.books.some((existing) => existing.title === book.title),
+      )
+      .map((book) => ({
+        title: book.title,
+        category: "Catalogue Title",
+        shortLine: "Presented as part of Harvey Havel’s collected backlist.",
+        image: book.image,
+        alt: `Book cover for ${book.title} by Harvey Havel.`,
+        retailers: [],
+      })),
+  ];
+
+  const scrollCarousel = (direction: "left" | "right") => {
+    const carousel = document.getElementById("harvey-books-carousel");
+    if (!carousel) return;
+
+    const amount = window.innerWidth < 640 ? 320 : 420;
+
+    carousel.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       id="books"
       className="scroll-mt-28 px-6 py-18 sm:py-24 lg:px-10 lg:py-28"
     >
       <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <Reveal>
-            <p className="eyebrow eyebrow-gold">
-              Books
-            </p>
-            <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-none text-ivory sm:text-5xl lg:text-[4.25rem]">
-              A catalogue shaped like a private library.
-            </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-ivory/66">
-              Selected titles from Harvey Havel&apos;s body of work, presented
-              with
-              the restraint and atmosphere of a collected edition rather than an
-              online shelf.
-            </p>
+            <div className="max-w-3xl">
+              <p className="eyebrow eyebrow-gold">Books</p>
+              <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-none text-ivory sm:text-5xl lg:text-[4.25rem]">
+                A catalogue shaped like a private library.
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-ivory/66">
+                Selected titles from Harvey Havel&apos;s body of work, presented
+                with the restraint and atmosphere of a collected edition rather
+                than an online shelf.
+              </p>
+            </div>
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
-              <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ivory/44">
-                From the wider catalogue
-              </p>
-              <div className="mt-5 grid grid-cols-4 gap-3">
-                {siteData.backlistPreview.map((book) => (
-                  <div
-                    key={book.title}
-                    className="overflow-hidden rounded-[1rem] border border-white/10 bg-midnight/80"
-                  >
-                    <Image
-                      src={book.image}
-                      alt={`Book cover for ${book.title} by Harvey Havel.`}
-                      width={220}
-                      height={320}
-                      className="h-auto w-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => scrollCarousel("left")}
+                aria-label="Scroll books left"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-xl text-ivory/72 transition duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-gold-light"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCarousel("right")}
+                aria-label="Scroll books right"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-xl text-ivory/72 transition duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-gold-light"
+              >
+                →
+              </button>
             </div>
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {siteData.books.map((book, index) => (
-            <motion.article
-              key={book.title}
-              whileHover={shouldReduceMotion ? undefined : { y: -8 }}
-              transition={{ duration: 0.28, ease: "easeOut" }}
-              className="h-full"
-            >
-              <Reveal delay={index * 0.08} className="h-full">
-                <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.35)]">
-                  <div className="absolute inset-x-5 top-5 h-px bg-[linear-gradient(90deg,transparent,rgba(168,134,75,0.65),transparent)]" />
-                  <div className="relative mt-4 overflow-hidden rounded-[1.35rem] border border-white/10 bg-midnight/75">
-                    {book.image ? (
-                      <Image
-                        src={book.image}
-                        alt={book.alt ?? `Book cover for ${book.title}.`}
-                        width={460}
-                        height={680}
-                        className="h-[20rem] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <div className="flex h-[20rem] items-end bg-[radial-gradient(circle_at_top,rgba(166,134,78,0.26),transparent_36%),linear-gradient(180deg,rgba(16,22,32,0.55),rgba(8,11,16,0.95))] p-6">
-                        <p className="max-w-[12rem] font-serif text-3xl leading-none text-ivory/80">
-                          Catalogue expanding
-                        </p>
+        <div className="mt-12">
+          <div
+            id="harvey-books-carousel"
+            className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4"
+          >
+            {libraryBooks.map((book, index) => (
+              <motion.article
+                key={book.title}
+                whileHover={shouldReduceMotion ? undefined : { y: -8 }}
+                transition={{ duration: 0.28, ease: "easeOut" }}
+                className="min-w-[82%] snap-start sm:min-w-[24rem] lg:min-w-[25rem]"
+              >
+                <Reveal delay={index * 0.06} className="h-full">
+                  <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.35)]">
+                    <div className="absolute inset-x-5 top-5 h-px bg-[linear-gradient(90deg,transparent,rgba(168,134,75,0.65),transparent)]" />
+
+                    <div className="relative mt-4 rounded-[1.35rem] border border-white/10 bg-midnight/75 p-4">
+                      <div className="aspect-[2/3] w-full overflow-hidden rounded-[1rem] bg-black/20">
+                        <Image
+                          src={book.image}
+                          alt={book.alt}
+                          width={460}
+                          height={690}
+                          className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                        />
                       </div>
-                    )}
-                  </div>
+                    </div>
 
-                  <div className="relative flex flex-1 flex-col">
-                    <p className="eyebrow eyebrow-gold mt-6">
-                      {book.category}
-                    </p>
-                    <h3 className="mt-3 font-serif text-3xl leading-tight text-ivory">
-                      {book.title}
-                    </h3>
-                    <p className="mt-4 flex-1 text-base leading-7 text-ivory/64">
-                      {book.shortLine}
-                    </p>
+                    <div className="relative flex flex-1 flex-col">
+                      <p className="eyebrow eyebrow-gold mt-6">{book.category}</p>
 
-                    <div className="mt-8 flex flex-wrap gap-3">
-                      {book.retailers.length ? (
-                        book.retailers.map((retailer) => (
-                          <LinkButton
-                            key={retailer.label}
-                            href={retailer.href}
-                            external
-                            variant="ghost"
-                            className="px-4 py-2 text-[0.64rem]"
-                          >
-                            {retailer.label}
-                          </LinkButton>
-                        ))
-                      ) : (
-                        <span className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory/38">
-                          Retail links coming soon
-                        </span>
-                      )}
+                      <h3 className="mt-3 font-serif text-3xl leading-tight text-ivory">
+                        {book.title}
+                      </h3>
+
+                      <p className="mt-4 flex-1 text-base leading-7 text-ivory/64">
+                        {book.shortLine}
+                      </p>
+
+                      <div className="mt-8 flex flex-wrap gap-3">
+                        {book.retailers.length ? (
+                          book.retailers.map((retailer) => (
+                            <LinkButton
+                              key={retailer.label}
+                              href={retailer.href}
+                              external
+                              variant="ghost"
+                              className="px-4 py-2 text-[0.64rem]"
+                            >
+                              {retailer.label}
+                            </LinkButton>
+                          ))
+                        ) : (
+                          <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[0.64rem] uppercase tracking-[0.22em] text-ivory/46">
+                            Catalogue title
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Reveal>
-            </motion.article>
-          ))}
+                </Reveal>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
